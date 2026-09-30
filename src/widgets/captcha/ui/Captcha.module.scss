@@ -1,0 +1,148 @@
+.widget {
+  width: 304px;
+  height: 78px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px 0 14px;
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: 2px;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #202124;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.1px;
+  cursor: pointer;
+  text-align: left;
+
+  &:focus-visible {
+    outline: 2px solid #1a73e8;
+    outline-offset: 3px;
+  }
+}
+
+.locked {
+  cursor: default;
+}
+
+.slot {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+
+.box {
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  border: 2px solid #c1c1c1;
+  border-radius: 2px;
+  background: #fff;
+  transition: border-color 0.15s ease;
+
+  .control:hover & {
+    border-color: #a6a6a6;
+  }
+
+  .control:active & {
+    transform: scale(0.94);
+  }
+}
+
+.spinner {
+  width: 26px;
+  height: 26px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2.5px solid #d0d0d0;
+  border-top-color: #4285f4;
+  border-right-color: #4285f4;
+  animation: spin 0.7s linear infinite;
+}
+
+.check {
+  width: 30px;
+  height: 30px;
+  display: block;
+  overflow: visible;
+  fill: none;
+  stroke: #34a853;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  path {
+    stroke-dasharray: 26;
+    stroke-dashoffset: 26;
+    animation: draw 0.36s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+}
+
+.brand {
+  width: 64px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 4px;
+}
+
+.mark {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+.brand-text {
+  margin-top: -2px;
+  color: #9aa0a6;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.2px;
+}
+
+.label {
+  max-width: 168px;
+  line-height: 1.25;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
+
+  .check path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}

@@ -1,0 +1,12 @@
+.game {
+  width: min(100vw, calc(100vh * 288 / 512));
+  aspect-ratio: 288 / 512;
+  display: grid;
+  place-items: center;
+  touch-action: none;
+  cursor: pointer;
+
+  canvas {
+    display: block;
+  }
+}

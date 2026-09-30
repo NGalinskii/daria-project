@@ -1,0 +1,55 @@
+.row {
+  display: flex;
+  align-items: flex-end;
+  gap: 7px;
+  width: 100%;
+  padding: 0 10px;
+  margin-top: 10px;
+}
+
+.bubble {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 32px;
+  padding: 10px 12px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(16, 42, 18, 0.13);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #b7c0c8;
+  animation: blink 1.05s infinite ease-in-out;
+
+  &:nth-child(2) {
+    animation-delay: 0.16s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.32s;
+  }
+}
+
+@keyframes blink {
+  0%,
+  70%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+
+  35% {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none;
+  }
+}

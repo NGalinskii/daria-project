@@ -1,0 +1,121 @@
+{
+  "authors": {
+    "egor": {
+      "name": "Егор Зазорнов",
+      "side": "in",
+      "avatar": true,
+      "friend": true
+    },
+    "nikolai": {
+      "side": "out"
+    }
+  },
+  "messages": [
+    {
+      "id": "day",
+      "type": "date",
+      "text": "1 октября 2026",
+      "time": "00:11"
+    },
+    {
+      "id": "image",
+      "from": "egor",
+      "text": "ну ты уже создал конечно образ определенный у себя в голове ее",
+      "time": "00:11",
+      "reply": {
+        "name": "Nikolai Galinskii",
+        "text": "Голосовое сообщение"
+      }
+    },
+    {
+      "id": "chance",
+      "from": "egor",
+      "text": "и шанс что она рил такая мал",
+      "time": "00:11"
+    },
+    {
+      "id": "duty",
+      "from": "egor",
+      "text": "так что можешь снизить с себя ответственность",
+      "time": "00:11"
+    },
+    {
+      "id": "vibe",
+      "from": "egor",
+      "text": "и делать по кайфу",
+      "time": "00:11"
+    },
+    {
+      "id": "love",
+      "from": "nikolai",
+      "text": "бро, я влюблен",
+      "time": "00:12"
+    },
+    {
+      "id": "swear",
+      "from": "egor",
+      "text": "КЛЯНИСЬ",
+      "time": "00:12"
+    },
+    {
+      "id": "oath",
+      "from": "nikolai",
+      "text": "я клянусь бро",
+      "time": "00:12"
+    },
+    {
+      "id": "again",
+      "from": "nikolai",
+      "text": "я влюблен",
+      "time": "00:12"
+    },
+    {
+      "id": "life",
+      "from": "egor",
+      "text": "ты за нее жизнь отдашь?",
+      "time": "00:12"
+    },
+    {
+      "id": "give",
+      "from": "nikolai",
+      "text": "я отдам за неё жизнь",
+      "time": "00:12"
+    },
+    {
+      "id": "moscow",
+      "from": "egor",
+      "text": "едь в Москву",
+      "time": "00:12"
+    },
+    {
+      "id": "laugh",
+      "from": "egor",
+      "text": "ХЕДЫХАЗЦХАЗВХПЗАЗХ",
+      "time": "00:12"
+    },
+    {
+      "id": "lol",
+      "from": "nikolai",
+      "text": "ору, но ты в крайности не падай",
+      "time": "00:12"
+    },
+    {
+      "id": "insert",
+      "from": "nikolai",
+      "text": "может эту переписку тож вставить в проект",
+      "time": "00:12"
+    },
+    {
+      "id": "joke",
+      "from": "egor",
+      "text": "можно по приколу",
+      "time": "00:12"
+    },
+    {
+      "id": "lazy",
+      "from": "nikolai",
+      "text": "но мне впадлу чот",
+      "time": "00:12"
+    }
+  ]
+}

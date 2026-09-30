@@ -1,0 +1,87 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  max-height: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.status {
+  min-height: 24px;
+  margin: 0;
+  color: #f3f3f3;
+  font-size: 22px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+.stage {
+  position: relative;
+}
+
+.well {
+  display: grid;
+  width: min(calc(100vw - 184px), calc((100dvh - 190px) / 2));
+  aspect-ratio: 10 / 20;
+  padding: 3px;
+  gap: 1px;
+  background: #111;
+  border: 3px solid #3a3a3a;
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  left: calc(100% + 12px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 72px;
+  aspect-ratio: 1;
+  gap: 1px;
+  padding: 4px;
+  background: #111;
+  border: 3px solid #3a3a3a;
+}
+
+.cell {
+  background: #1c1c1c;
+}
+
+.ghost {
+  background: transparent;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.35);
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.controls button,
+.retry {
+  margin: 0;
+  border: 0;
+  border-radius: 8px;
+  background: #fff;
+  color: #111;
+  font: 700 18px/1 inherit;
+  cursor: pointer;
+}
+
+.controls button {
+  width: 52px;
+  height: 44px;
+}
+
+.retry {
+  padding: 8px 14px;
+  font-size: 14px;
+}
+
+.hint {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 13px;
+}

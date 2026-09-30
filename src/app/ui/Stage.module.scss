@@ -1,0 +1,59 @@
+.stage {
+  min-height: 100vh;
+  background: #111;
+  transition: background-color 0.45s ease;
+}
+
+.skip {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 20;
+  margin: 0;
+  padding: 7px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+  color: #111;
+  font: 600 13px/1 inherit;
+  cursor: pointer;
+}
+
+.screen {
+  min-height: 100vh;
+  animation: arrive 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.leaving {
+  animation: depart 0.42s cubic-bezier(0.4, 0, 0.7, 0.2) forwards;
+  pointer-events: none;
+}
+
+@keyframes depart {
+  to {
+    opacity: 0;
+    transform: translateY(-28px) scale(0.94);
+  }
+}
+
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage,
+  .screen,
+  .leaving {
+    animation: none;
+    transition: none;
+  }
+}

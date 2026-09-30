@@ -1,0 +1,15 @@
+.slot {
+  width: 34px;
+  height: 34px;
+  flex: none;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  flex: none;
+  border-radius: 50%;
+  margin-bottom: 1px;
+  object-fit: cover;
+  object-position: center 22%;
+}

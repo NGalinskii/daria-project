@@ -1,0 +1,135 @@
+.sky {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  color: #ffe81f;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", "Nimbus Sans Narrow", sans-serif;
+  touch-action: none;
+  user-select: none;
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 2px #fff;
+}
+
+.board {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  perspective: 240px;
+  perspective-origin: 50% 16%;
+}
+
+.plane {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  transform: rotateX(32deg);
+  transform-origin: 50% 100%;
+}
+
+.crawl {
+  position: absolute;
+  top: 72%;
+  left: 8%;
+  right: 8%;
+  animation: crawl 155s linear forwards;
+  font-size: clamp(28px, 5vw, 56px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.03em;
+  text-align: center;
+  hyphens: none;
+}
+
+.episode {
+  margin: 0 0 0.4em;
+  font-size: 0.72em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0 0 1.4em;
+  font-size: 1.35em;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.intro {
+  margin: 0 0 1em;
+  text-align: justify;
+}
+
+.heading {
+  margin: 1.6em 0 0.35em;
+  font-size: 0.95em;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.name {
+  margin: 0.12em 0;
+}
+
+.fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 16%;
+  background: linear-gradient(#000 0%, transparent 100%);
+  pointer-events: none;
+}
+
+@keyframes crawl {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - 240vh));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sky {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .board,
+  .plane {
+    position: relative;
+    height: auto;
+    perspective: none;
+    overflow: visible;
+    transform: none;
+  }
+
+  .crawl {
+    position: relative;
+    animation: none;
+    transform: none;
+    padding: 72px 0 48px;
+  }
+
+  .fade {
+    display: none;
+  }
+}

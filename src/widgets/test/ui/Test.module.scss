@@ -1,0 +1,83 @@
+.layout {
+  width: min(440px, calc(100vw - 32px));
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.progress {
+  margin: 0;
+  color: #8a8178;
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.card {
+  animation: in 0.35s ease;
+}
+
+.question {
+  margin: 0 0 18px;
+  color: #1c1917;
+  font-size: 28px;
+  font-weight: 680;
+  line-height: 1.25;
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.choice,
+.leave {
+  width: 100%;
+  margin: 0;
+  padding: 16px 18px;
+  border: 0;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(40, 28, 16, 0.08);
+  color: #1c1917;
+  font: 600 17px/1.35 inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.choice:hover {
+  transform: translateY(-1px);
+}
+
+.leave {
+  animation: away 0.48s cubic-bezier(0.4, 0, 0.7, 0.2) forwards;
+  pointer-events: none;
+}
+
+@keyframes away {
+  to {
+    transform: translateX(110vw);
+    opacity: 0;
+  }
+}
+
+@keyframes in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .leave {
+    animation: none;
+  }
+}
