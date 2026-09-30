@@ -3,7 +3,7 @@ import testFile from "@/shared/assets/json/test.json";
 export type Question = {
   id: string;
   text: string;
-  answers: [string, string];
+  answers: string[];
 };
 
 export const testTitle = testFile.title;

@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: daria-project
+    container_name: daria-project
+    ports:
+      - "127.0.0.1:3001:80"
+    restart: unless-stopped

@@ -2,10 +2,21 @@ import { useState } from "react";
 import { questions, testResult, testTitle } from "@/widgets/test/model/questions.ts";
 import s from "./Test.module.scss";
 
+function shuffle(items: readonly string[]) {
+  const next = [...items];
+  for (let index = next.length - 1; index > 0; index -= 1) {
+    const swap = Math.floor(Math.random() * (index + 1));
+    const current = next[index] ?? "";
+    next[index] = next[swap] ?? current;
+    next[swap] = current;
+  }
+  return next;
+}
+
 export function Test({ onComplete }: { onComplete: () => void }) {
   const [index, setIndex] = useState(0);
   const [finished, setFinished] = useState(false);
-  const [flip] = useState(() => questions.map(() => Math.random() < 0.5));
+  const [orders] = useState(() => questions.map((question) => shuffle(question.answers)));
   const question = questions[index];
 
   if (finished || !question) {
@@ -22,9 +33,7 @@ export function Test({ onComplete }: { onComplete: () => void }) {
     );
   }
 
-  const answers = flip[index]
-    ? [question.answers[0], question.answers[1]]
-    : [question.answers[1], question.answers[0]];
+  const answers = orders[index] ?? question.answers;
 
   const choose = () => {
     if (index + 1 >= questions.length) {

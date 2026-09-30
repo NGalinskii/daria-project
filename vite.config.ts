@@ -11,7 +11,8 @@ const src = decodeURIComponent(import.meta.url)
   .replace(/^file:\/\//, "")
   .replace(/\/vite\.config\.ts$/, "/src");
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
+  base: command === "build" ? "/for-daria/" : "/",
   plugins: [react()],
   resolve: {
     alias: [{ find: /^@\//, replacement: `${src}/` }],
@@ -21,4 +22,4 @@ export default defineConfig({
       localsConvention: "camelCase",
     },
   },
-});
+}));
