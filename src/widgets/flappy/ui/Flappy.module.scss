@@ -1,8 +1,11 @@
 .game {
-  width: min(100vw, calc(100vh * 288 / 512));
-  aspect-ratio: 288 / 512;
+  flex-shrink: 0;
+  height: 100%;
+  width: calc(100vh * 288 / 512);
+  width: calc(100dvh * 288 / 512);
   display: grid;
   place-items: center;
+  overflow: hidden;
   touch-action: none;
   cursor: pointer;
 

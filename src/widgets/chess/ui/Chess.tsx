@@ -128,7 +128,7 @@ export function Chess({ onComplete }: { onComplete: () => void }) {
             ? "Чёрные думают"
             : check
               ? "Шах. Ваш ход"
-              : "Поставьте мат";
+              : "Поставь мат";
 
   const marks: Record<string, CSSProperties> = {};
   if (lastMove) {
@@ -145,10 +145,10 @@ export function Chess({ onComplete }: { onComplete: () => void }) {
   return (
     <div className={s.layout}>
       <p className={s.status}>
+        {status}
         {outcome === "mate" && (
           <img className={s.brilliant} src={brilliantMove} alt="" />
         )}
-        {status}
       </p>
       <div className={s.board}>
         <Chessboard
@@ -170,7 +170,7 @@ export function Chess({ onComplete }: { onComplete: () => void }) {
           }}
         />
       </div>
-      <p className={s.side}>Вы играете белыми</p>
+      <p className={s.side}>Ты играешь белыми</p>
       {outcome === "lost" || outcome === "draw" ? (
         <button type="button" className={s.retry} onClick={restart}>
           reset, я не думал, что тут можно проиграть

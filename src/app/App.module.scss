@@ -1,0 +1,14 @@
+.preload {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.preload img {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}

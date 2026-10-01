@@ -41,10 +41,10 @@
 
 .crawl {
   position: absolute;
-  top: 72%;
+  top: 82%;
   left: 8%;
   right: 8%;
-  animation: crawl 155s linear forwards;
+  animation: crawl 170s linear forwards;
   font-size: clamp(28px, 5vw, 56px);
   font-weight: 600;
   line-height: 1.35;
@@ -102,7 +102,7 @@
   }
 
   to {
-    transform: translateY(calc(-100% - 240vh));
+    transform: translateY(calc(-100% - 280vh));
   }
 }
 

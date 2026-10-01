@@ -1,4 +1,5 @@
 import { useState } from "react";
+import minecraftLogo from "@/shared/assets/images/minecraft-logo.png";
 import { questions, testResult, testTitle } from "@/widgets/test/model/questions.ts";
 import s from "./Test.module.scss";
 
@@ -21,11 +22,12 @@ export function Test({ onComplete }: { onComplete: () => void }) {
 
   if (finished || !question) {
     return (
-      <div className={s.layout}>
-        <p className={s.progress}>{testTitle}</p>
-        <div className={s.card}>
-          <h1 className={s.question}>{testResult}</h1>
-          <button type="button" className={s.choice} onClick={onComplete}>
+      <div className={s.resultLayout}>
+        <img className={s.logo} src={minecraftLogo} alt="Minecraft" />
+        <div className={s.result}>
+          <p className={s.resultLabel}>Результат</p>
+          <h1 className={s.resultText}>{testResult}</h1>
+          <button type="button" className={s.next} onClick={onComplete}>
             Дальше
           </button>
         </div>
@@ -45,6 +47,7 @@ export function Test({ onComplete }: { onComplete: () => void }) {
 
   return (
     <div className={s.layout}>
+      <img className={s.logo} src={minecraftLogo} alt="Minecraft" />
       <p className={s.progress}>
         {testTitle} · {index + 1} / {questions.length}
       </p>

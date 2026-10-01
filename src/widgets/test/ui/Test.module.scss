@@ -5,6 +5,13 @@
   gap: 18px;
 }
 
+.logo {
+  display: block;
+  width: min(360px, 100%);
+  height: auto;
+  margin: 0 auto;
+}
+
 .progress {
   margin: 0;
   color: #8a8178;
@@ -63,6 +70,55 @@
   }
 }
 
+.result-layout {
+  width: min(520px, calc(100vw - 32px));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.result {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  padding: 40px 32px 28px;
+  border-radius: 28px;
+  background: #1c1917;
+  color: #f6f1ea;
+  text-align: center;
+  animation: in 0.45s ease;
+}
+
+.result-label {
+  margin: 0;
+  color: #e0b56a;
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.result-text {
+  margin: 0;
+  font-size: clamp(32px, 6vw, 44px);
+  font-weight: 680;
+  line-height: 1.15;
+}
+
+.next {
+  margin: 6px 0 0;
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 999px;
+  background: #f6f1ea;
+  color: #1c1917;
+  font: 650 15px/1 inherit;
+  cursor: pointer;
+}
+
 @keyframes in {
   from {
     opacity: 0;
@@ -77,6 +133,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .card,
+  .result,
   .leave {
     animation: none;
   }

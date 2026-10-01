@@ -456,8 +456,16 @@ export async function createFlappy(hooks: { onComplete: () => void }) {
     if (app.renderer.resolution !== scale) {
       app.renderer.resize(WIDTH, HEIGHT, scale);
     }
-    app.canvas.style.width = `${(WIDTH * scale) / dpr}px`;
-    app.canvas.style.height = `${(HEIGHT * scale) / dpr}px`;
+    const cssWidth = (WIDTH * scale) / dpr;
+    const cssHeight = (HEIGHT * scale) / dpr;
+    const cover = Math.max(
+      parent.clientWidth / cssWidth,
+      parent.clientHeight / cssHeight,
+    );
+    app.canvas.style.width = `${cssWidth}px`;
+    app.canvas.style.height = `${cssHeight}px`;
+    app.canvas.style.transformOrigin = "center";
+    app.canvas.style.transform = `scale(${cover})`;
   };
 
   const watchDensity = () => {
